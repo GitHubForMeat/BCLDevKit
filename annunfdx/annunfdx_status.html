@@ -1,0 +1,40 @@
+<html>&L(0,"*",5);
+<head>
+<style type="text/css">
+<!--
+body.iframe,td.iframe{
+	margin-left: 0px;
+	line-height: 90%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+-->
+</style>
+</head>
+<body class=iframe>
+
+<table width="510px" class=iframe>
+	<tr>
+		<td width=250 class=iframe>Streaming Mode
+		<td class=iframe><p style="color:red">
+			&LSetup(3,"%s",520,B,0,"Send Always");
+			&LSetup(3,"%s",520,B,1,"Send on I0/DI1");
+			&LSetup(3,"%s",520,B,2,"Respond");
+			&LSetup(3,"%s",520,B,3,"Send On Level");</p>
+	<tr>
+		<td class=iframe> Remote Party
+		<td class=iframe> &LBAS(1,"%fs",rho$);
+	<tr>
+		<td class=iframe>Current Set Volume
+		<td class=iframe>&LBAS(1,"%u",vol); * 5&nbsp; %
+	<tr>
+		<td class=iframe>Left Input Peak Level
+		<td class=iframe>&LBAS(1,"%u",levl); &nbsp;
+	<tr>
+		<td class=iframe>Right Input Peak Level
+		<td class=iframe>&LBAS(1,"%u",levr); &nbsp;
+
+</table>
+</body>
+</html>

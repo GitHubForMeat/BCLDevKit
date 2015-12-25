@@ -1,0 +1,8 @@
+0123
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+Vers  Date     Who  What
+0120  06.10.09 PK - started version history
+0121  15.10.09 PK - fixed bug in interval: if interval set to 0 does not send at all
+0122  17.05.10 DB - merged Digital I/O Tunnel with Serial Tunnel
+0123  29.11.10 PK - removed "main program looped" message, which was sent 2500x per second on debug level 9
+*/

@@ -1,0 +1,26 @@
+<html>&L(0,"*",5);
+<head>
+<link href="menu.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<p style="color:red">
+Streaming Mode:<br>
+&LSetup(3,"%s",520,B,0,"Send Always");
+&LSetup(3,"%s",520,B,1,"Send on I0/DI1");
+&LSetup(3,"%s",520,B,2,"Respond");
+&LSetup(3,"%s",520,B,3,"Send On Level");
+</p>
+
+<table border="0" cellspacing="1" cellpadding="3" width="175px">
+<tr><td class="menu"><b>Basic Settings</b>
+<tr><td class="menu"><a class="main" href="uifadvanced.html" target="view_frame">Advanced Settings</a>
+</table>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td class="normal">&nbsp;
+<tr>
+	<td class="normal"><input type="button" value="Apply" onclick="parent.frames['cfg'].document.forms['settings'].submit();">
+	<td class="normal"><input type="button" value="Cancel" onclick="parent.frames['cfg'].document.forms['settings'].reset()">
+</table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+table.vu_meter {
+	width: 250px;
+	height: 10px;	
+	border: 1px solid #aaaaaa;
+	padding: 0px;
+	border-spacing:1px;
+}
+
+table.vu_meter td {
+	background-color: lightgray;
+	width: 10px;
+	height: 8px;	
+}

@@ -1,0 +1,80 @@
+<html>
+<head>
+<link href="help.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tr id="t1" style="display:none"><td class="hlp">
+<b>Help</b><br><br>
+<b>ADVANCED SETTINGS 1</b><br><br>
+<b>Option 1</b><br>
+Put here Option 1 help text.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<!-- the non breakable spaces are inserted to force the help frame expand till the end of menu-->
+<b>Option 2</b><br>
+Put here Option 2 help text<br>
+
+<tr id="t2"><td class="hlp">
+<b>Help</b><br><br>
+<b>ADVANCED SETTINGS 2</b><br><br>
+<b>Option 3</b><br>
+Put here Option 3 help text.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<b>Option 4</b><br>
+Put here Option 4 help text.<br>
+
+<tr id="t3"><td class="hlp">
+<b>Help</b><br><br>
+<b>NETWORK SETTINGS</b><br><br>
+<b>Use SonicIP</b><br>
+If set to <em>"yes"</em>, the device will announce its IP address over the audio output.<br>
+Default: <em>"yes"</em><br><br>
+<b>IP Address</b><br>
+Enter the 4 values of the desired device IP address e.g.:<br>
+<em>"0.0.0.0"</em> for automatic discovery (DHCP/Bootp, IPzator, AutoIP)<br>
+<em>"192.168.0.12"</em> for an internal LAN <br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Netmask</b><br>
+Enter the 4 values of the desired Static IP e.g.:<br>
+<em>"0.0.0.0"</em> for a default Netmask depending on the used IP Address.<br>
+<em>"255.255.255.0"</em> for a C class network<br>
+Default: <em>"255.255.255.0"</em><br>
+<br>
+<b>Gateway IP Address</b><br>
+Enter the 4 values of the desired Gateway IP address e.g.:<br>
+<em>"0.0.0.0"</em> for no Gateway<br>
+<em>"192.168.0.1"</em> for a Gateway in a LAN<br>
+<b>Note</b>: The Gateway has to be set only when connecting to other devices over the WAN (through a router).<br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Primary DNS</b><br>
+In this field you can give the Exstreamer the desired primary and alternativ DNS IP address to be able to connect to URLs (e.g. www.radio.com).<br>
+Example: <em>"195.186.1.111"</em><br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Alternative DNS</b><br>
+In this field you can give the Exstreamer the desired alternativ DNS IP address in case the primary DNS is not reachable.<br>
+Example: <em>"195.186.4.111"</em><br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Syslog Address</b><br>
+Destination address for syslog messages sent by the BCL program via the SYSLOG command. Set this to your syslog logging machine, if your syslog messages are recorded centrally.<br>
+If set to <em>0.0.0.0</em>, syslog messages are broadcast.<br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>DHCP Host Name</b><br>
+Name of the device sent in DHCP request. If left empty, a name based on the device's MAC address is generated automatically. Enter up to 15 Characters.<br>
+<br>
+<b>Web server port</b><br>
+Defines the port where the webserver of the Barix Exstreamer can be reached. If set to "0" the default HTTP port (80) is used.<br><br>
+<b>SNMP System Name</b><br>
+SNMP MIB entry for system name (system.sysName.0)<br><br>
+<b>SNMP System Location</b><br>
+SNMP MIB entry for system location (system.sysLocation.0)<br><br>
+<b>SNMP System Contact</b><br>
+SNMP MIB entry for system contact (system.sysContact.0)<br>
+This parameter can be queried using any SNMP browser but can not be updated.<br><br>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<html><!--&L(0,"*",21);-->
+<head>
+<link href="help.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+
+<tr id="t1" ><td class="hlp">
+<b>Help</b><br><br>
+<b>NETWORK SETTINGS</b><br><br>
+<b>Use SonicIP</b><br>
+If set to <em>"yes"</em>, the device will announce its IP address over the audio output during device startup.<br>
+Default: <em>"yes"</em><br><br>
+<b>IP Address</b><br>
+Enter the 4 values of the desired device IP address e.g.:<br>
+<em>"0.0.0.0"</em> for automatic discovery (DHCP/BOOTP, IPzator, AutoIP)<br>
+<em>"192.168.0.12"</em> for an internal LAN <br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Netmask</b><br>
+Enter the 4 values of the desired Static IP e.g.:<br>
+<em>"0.0.0.0"</em> for a default Netmask depending on the used IP Address.<br>
+<em>"255.255.255.0"</em> for a C class network<br>
+Default: <em>"255.255.255.0"</em><br>
+<br>
+<b>Gateway IP Address</b><br>
+Enter the 4 values of the desired Gateway IP address e.g.:<br>
+<em>"0.0.0.0"</em> for no Gateway<br>
+<em>"192.168.0.1"</em> for a Gateway in a LAN<br>
+<b>Note</b>: The Gateway has to be set only when connecting to other devices over the WAN (through a router).<br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Primary DNS</b><br>
+In this field you can give the Exstreamer the desired primary and alternativ DNS IP address to be able to connect to URLs (e.g. www.radio.com).<br>
+Example: <em>"195.186.1.111"</em><br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Alternative DNS</b><br>
+In this field you can give the Exstreamer the desired alternativ DNS IP address in case the primary DNS is not reachable.<br>
+Example: <em>"195.186.4.111"</em><br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>Syslog Address</b><br>
+Destination address for syslog messages sent by the BCL program via the SYSLOG command. Set this to your syslog logging machine, if your syslog messages are recorded centrally.<br>
+If set to <em>0.0.0.0</em>, syslog messages are broadcast.<br>
+Default: <em>"0.0.0.0"</em><br>
+<br>
+<b>DHCP Host Name</b><br>
+Name of the device sent in DHCP request. If left empty, a name based on the device's MAC address is generated automatically. Enter up to 15 Characters.<br>
+<br>
+<b>Web Server Port</b><br>
+Defines the port where the webserver of the Barix Exstreamer can be reached. If set to "0" the default HTTP port (80) is used.<br><br>
+
+<!--
+&LState(2,"%s",28,25,"-->");
+&LState(2,"%s",28,17,"-->");
+<b>Default Ethernet Port</b><br>
+On devices with dual-ethernet connection this parameter selects the default port to
+be used. In most cases selecting <em>ETH1</em> is suitable, however some devices (e.g.
+the PS16) provide Power-over-Ethernet (PoE) functionality on <em>ETH2</em>.<br>
+If you change this parameter do not forget to connect the ethernet cable to the
+proper port on the rear of the device.<br>
+Default: <em>"ETH1"</em><br><br>
+<!-- -->
+
+<b>SNMP System Name</b><br>
+SNMP MIB entry for system name (system.sysName.0)<br><br>
+<b>SNMP System Location</b><br>
+SNMP MIB entry for system location (system.sysLocation.0)<br><br>
+<b>SNMP System Contact</b><br>
+SNMP MIB entry for system contact (system.sysContact.0)<br>
+This parameter can be queried using any SNMP browser but can not be updated.<br><br>
+
+
+<tr id="t2" style="display:none"><td class="hlp">
+<b>Help</b><br><br>
+<b>AUDIO SETTINGS</b><br><br>
+
+<b>Input Source</b><br>
+Select the desired input source.<br>
+Default setting is <em>"Mic"</em>.<br><br>
+<b>Encoding</b><br>
+Choose between <em>8/24 kHz "uLaw"</em>, <em>"aLaw"</em>, or <em>"PCM"</em> codecs.<br>
+<em><b>Note: </b></em>The G.722 selection option is visible only if supported by the HW.<br>
+Default setting is <em>"uLaw 24kHz"</em>.<br><br>
+<b>Volume</b><br>
+Choose between <em>"0%"</em> and <em>"100%"</em> in 5% steps.<br>
+Default: <em>"50%"</em><br><br>
+<b>Microphone Gain</b><br>
+Microphone gain dB, increase if your microphone is too faint, decrease if it's too loud or overdriven.
+Default: <em>"21dB"</em><br><br>
+<b>A/D Amplifier Gain</b><br>
+A/D converter preamplification in dB. Increase if the audio signal too faint, decrease if it's too loud or overdriven.
+Default: <em>"0dB"</em><br><br>
+
+<tr id="t3" style="display:none"><td class="hlp">
+<b>Help</b></a><br><br>
+<b>STREAMING SETTINGS</b><br><br>
+<b>RTP mode</b><br>
+If set, audio will be transmitted over RTP (used in VoIP systems), if not set raw UDP will be used as the transport protocol which is the default. <br>
+In RTP mode packet size is given by the encoding used and can not be altered by the user (the packet size setting below is ignored). <br>
+Default setting is <em>"OFF"</em>.<br><br>
+<b>Streaming mode</b><br>
+<em>"send always"</em> will stream always<br>
+<em>"send on level"</em> will stream if the input audio level goes above the configured <em>"Input Trigger Level"</em><br>
+<em>"send on I0/DI1"</em> will stream if the I0 (Annuncicom100/Legacy) or DI1(Annuncicom1000/Exstreamer1000) is activated<br>
+<em>"respond"</em> will stream back as long as a stream is beeing received<br>
+Default setting is <em>"send always"</em>.<br><br>
+<b>Input Trigger Level</b><br>
+Triggering input audio level if <em>"send on level"</em> mode is selected. Accepted range: 0-32767<br>
+Default: <em>"1000"</em><br><br>
+<b>Inactivity Timeout</b><br>
+<em>"Send on level"</em> streaming stops after this number of milliseconds of no input audio signal.<br>
+Default: <em>"1000ms"</em><br><br>
+<b>Destination IP:Port</b><br>
+Destination address and port where the audio stream will be sent to. Enter your peer's UDP address and port here.<br>
+Default port: <em>"3030"</em><br><br>
+<b>Source IP</b><br>
+Enter IP address of your source here. The annuncicom will receive audio stream only from this address.<br>
+This address can be <b>0.0.0.0</b> to accept any stream coming to the receiving port; a <b>multicast address</b> to subscribe to a specific multicast group; or a <b>unicast</b> address to receive stream from a specific source only.
+Default: <em>"0.0.0.0"</em><br><br>
+<b>Local Receive Port</b><br>
+Local UDP stream receive port.<br>
+Set to a value between 0 (disabled) and 65535.<br>
+Default port  is <em>"3030"</em>.<br><br>
+
+<tr id="t4" style="display:none"><td class="hlp">
+<b>Help</b></a><br><br>
+<b>SERIAL GATEWAY SETTINGS</b><br><br>
+<b>Communication protocol</b><br>
+Select communication protocol "UDP" or "TCP" to enable gateway functionality. Further parameters are shown based on the selected mode.<br>
+Default protocol is "UDP".<br><br>
+<em>"Destination IP (TCP mode)" </em> Defines IP address of remote device to establish TCP connection.<br>
+<em>"Destination port (TCP mode)"</em>  Defines the port number of remote device to establish a TCP connection.<br>
+<em>"Connection Type (TCP mode)"</em> "Active" initiate connection with remote device. "Passive" Listen for incoming connection.<br>
+<em>"Local port (TCP Mode)"</em>  In "Passive" mode defines the local port  to listen on for an incoming TCP connection.<br>
+<em>"Communication port (UDP Mode)"</em> Defines the port on the audio partner to use for serial gateway. IP address is defined as above in Streaming "Destination IP".<br>
+<br>
+<b>Use Serial Port For</b><br><br>
+These settings adjust the purpose of the serial port. You can choose between the following values:<br><br>
+<em>BCL Application:</em> In this mode the serial port is used for the serial gateway.<br>
+<em>VSC Panel:</em> In this mode the serial port is used to control the Volume Source Control (VSC) panel.<br>
+<em>RTC Dongle:</em> In this mode the serial port is used to control the external RTC module.<br>
+Default: <em>"BCL Application"</em><br><br>
+<b>Baud Rate</b><br>
+Select the serial transmission speed (<em>"300"</em> to <em>"230400"</em> Baud).<br>
+Default: <em>"9600"</em><br><br>
+<b>Data Bits</b><br>
+Select <em>"7"</em> or <em>"8"</em> data bits.<br>
+Default: <em>"8"</em><br><br>
+<b>Parity</b><br>
+Select <em>"no"</em>, <em>"even"</em> or <em>"odd"</em> parity.<br>
+Default: <em>"no"</em><br><br>
+<b>Stop Bits</b><br>
+Select <em>"1"</em> or <em>"2"</em> stop bits.<br>
+Default: <em>"1"</em><br><br>
+<b>Flow Control</b><br>
+Select the type of flow control:<br>
+RTS/CTS signals not used: <em>"none"</em><br>
+RS232: <em>"Software flow control(XON/XOFF)"</em> or <em>"Hardware flow control (RTS/CTS)"</em><br>
+RS485: <em>"RS485 direction control"</em><br>
+Default: <em>"none"</em><br><br><br>
+
+
+<tr id="t5" style="display:none"><td class="hlp">
+<b>Help</b><br><br>
+<b>ADVANCED SETTINGS</b><br><br>
+<b>Send Keepalives</b><br>
+Send periodic keepalive messages if the communication partner is not sending any audio stream. <br>
+Turn this feature on if you're behind a FW/NAT and you want to keep the communication port open.<br>
+Default is <em>"OFF"</em>.<br><br>
+<b>Delay</b><br>
+The RTP decoder keeps constant decoding latency within one frame accuracy. Set the required delay in milliseconds.<br>
+The delay value should be set large enough to cope with network jitter (difference in packets delivery time) and possible packet loss.
+Increase the value if you are experiencing audio dropout.<br>
+The lowest recommended setting is about 80ms for uLaw/ALaw 8kHz.<br>
+Default setting is <em>"100 milliseconds"</em>.<br><br>
+<b>Frame Duration</b><br>
+Together with the Delay the Frame Duration setting can help to reduce the overall delay of the point-to-point link. The Frame Duration defines how long chunk of audio is transmitted in one packet. The standard frame duration is 20 milliseconds.<br>
+Please note that low duration increases the network bandwidth usage and system utilisation.<br>
+Default setting is <em>"20 milliseconds"</em>.<br><br>
+<b>Relay Off Delay</b><br>
+Using this variable, the output relay activation can be prolonged, which can be useful when the relay is being used to control, for example, an amplifier. The relay off delay is needed when using MP3 encoding, where the unpredictable nature of the compression means that it is not possible to predict how long the audio will take to reach and transmit at the remote end. 
+Default value is: "1200 msec." 
+Set 0 set disable it.
+<br><br>
+
+<tr id="t6" style="display:none"><td class="hlp">
+<b>Help</b><br><br>
+<b>SECURITY SETTINGS</b><br><br>
+<b>Reset Function</b><br>
+Enable or disable the &quot;Reset&quot; function on the Reset button and on the WEB UI. In order to restart the device press the Reset button once. <br>
+Default: <em>"enabled"</em><br><br>
+<b>Factory Defaults</b><br>
+Enable or disable the &quot;Factory Defaults&quot; function on the  Reset button. In order to revert all settings to factory defaults keep the Reset button pressed until the red LED starts blinking (approx. 10 seconds). <br>
+Default: <em>"enabled"</em><br><br>
+<b>Update Function</b><br>
+Enable or disable the WEB Update function of the device. If the Update function is disabled, the only way to update the firmware is to use the serial rescue. <br>
+Default: <em>"enabled"</em><br><br>
+<b>Set Password</b><br>
+This is visible as long as no password is set.<br>
+Enter a password (up to 25 characters) and hit the &quot;Apply&quot; button. After the restart you should close the browser window and open a new browser window. You will be asked to supply user name and password. The user name can be omitted but the password has to be supplied in order to see the web configuration.<br><br>
+<b>Old Password / New Password </b><br>
+These fields are visible as long as a password is set.<br><br>
+To allow free access (clearing the password) enter the old password and leave the field &quot;New Password&quot; empty, then hit the &quot;Apply&quot; button.<br>
+After the restart you will not be asked for user name and password anymore.<br><br>
+To change the password enter the old password and enter the new password in the field &quot;New Password&quot;, then hit the &quot;Apply&quot; button.<br>
+After the restart you will be asked for user name and password. The user name can be omitted but the new password has to be supplied in order to see the web configuration.
+
+</table>
+</body>
+</html>

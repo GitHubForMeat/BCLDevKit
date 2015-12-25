@@ -1,0 +1,287 @@
+<html>
+  <!-- &L(0,"*"); -->
+  <head>
+    <script language=JavaScript src=util.js></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  </head>
+  <body bgcolor=#FFFFFF link=#CCCCCC vlink=#CCCCCC alink="#FFFFFF"><br>
+    <p><font size="3" face="Arial"><b>APPLICATION SETUP: Digital I/O &amp; Serial Tunnel Version &LBAS(1,"%fs",vers$);</b></font><br>
+    <br>                                                                            
+    <img src="col0.gif" width="650" height="1"><br>                                 
+    <table>                                                                         
+       <form action=setup.cgi method=get><input type="hidden" name=L value=uisaved.html>
+       <tr>                                                                         
+            <td><font size="3" face="Arial, Helvetica, sans-serif"><b>RS-232 TUNNEL</b></font></td>
+       </tr>
+       <tr>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b><u>Server settings</u></b></font></td>
+       </tr>
+       <tr>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Local port</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><input name=W18 size=5 maxlength=5 value=&LSetup(1,"%u",18,W); onChange=PortCheck(this)></font></td>
+       </tr>
+       <tr>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Disconnect Tout</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><input name=B26 size=3 maxlength=3 value=&LSetup(1,"%u",26,B); onChange=ByteCheck(this)> seconds</font></td>
+       </tr>
+       <tr>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b><u>Client settings</u></b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif">(disable Server first! See help.)</font></td>
+       </tr>
+       <tr>                                                                         
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Remote IP Address</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif">
+                        <input name=B534 size=3 maxlength=3 value=&LSetup(1,"%u",534); onChange=IPCheck(this)><b>&nbsp;.&nbsp;</b>
+                        <input name=B535 size=3 maxlength=3 value=&LSetup(1,"%u",535); onChange=IPCheck(this)><b>&nbsp;.&nbsp;</b>
+                        <input name=B536 size=3 maxlength=3 value=&LSetup(1,"%u",536); onChange=IPCheck(this)><b>&nbsp;.&nbsp;</b>
+                        <input name=B537 size=3 maxlength=3 value=&LSetup(1,"%u",537); onChange=IPCheck(this)></font>
+            </td>
+        </tr>
+        <tr>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Remote TCP Port</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><input name=W532 size=5 maxlength=5 value=&LSetup(1,"%u",532,W); onChange=PortCheck(this)></font></td>
+        </tr>
+       <tr>                                                                         
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Reconnect interval</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><input name=B538 size=3 maxlength=3 value=&LSetup(1,"%u",538); onChange=IPCheck(this)> seconds</font></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+       <tr>                                                                         
+            <td><font size="3" face="Arial, Helvetica, sans-serif"><b>I/O TUNNEL</b></font></td>
+        </tr>
+       <tr>                                                                         
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Remote IP Address</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif">
+                        <input name=B514 size=3 maxlength=3 value=&LSetup(1,"%u",514); onChange=IPCheck(this)><b>&nbsp;.&nbsp;</b>
+                        <input name=B515 size=3 maxlength=3 value=&LSetup(1,"%u",515); onChange=IPCheck(this)><b>&nbsp;.&nbsp;</b>
+                        <input name=B516 size=3 maxlength=3 value=&LSetup(1,"%u",516); onChange=IPCheck(this)><b>&nbsp;.&nbsp;</b>
+                        <input name=B517 size=3 maxlength=3 value=&LSetup(1,"%u",517); onChange=IPCheck(this)></font>
+            </td>
+        </tr>
+        <tr>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Tunneling UDP Port</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><input name=W512 size=5 maxlength=5 value=&LSetup(1,"%u",512,W); onChange=PortCheck(this)></font></td>
+        </tr>
+        <tr>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Send Interval</b></font></td>
+            <td><font size="2" face="Arial, Helvetica, sans-serif"><input name=W527 size=5 maxlength=5 value=&LSetup(1,"%u",527,W); onChange=PortCheck(this)> seconds</font></td>
+        </tr>
+<!--        <tr>
+          <td><font size="1" face="Arial, Helvetica, sans-serif">&nbsp;</font></td>
+        </tr>-->
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b><u>Remote Input</u></b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b><u>Local Output Action</u></b></font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 1</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B518>
+           <option value=0&LSetup(3,"%s",518,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",518,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",518,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",518,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",518,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",518,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",518,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",518,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",518,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",518,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",518,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",518,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",518,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",518,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",518,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 2</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B519>
+           <option value=0&LSetup(3,"%s",519,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",519,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",519,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",519,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",519,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",519,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",519,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",519,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",519,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",519,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",519,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",519,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",519,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",519,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",519,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 3</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B520>
+           <option value=0&LSetup(3,"%s",520,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",520,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",520,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",520,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",520,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",520,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",520,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",520,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",520,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",520,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",520,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",520,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",520,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",520,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",520,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 4</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B521>
+           <option value=0&LSetup(3,"%s",521,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",521,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",521,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",521,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",521,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",521,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",521,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",521,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",521,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",521,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",521,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",521,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",521,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",521,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",521,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 5</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B522>
+           <option value=0&LSetup(3,"%s",522,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",522,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",522,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",522,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",522,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",522,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",522,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",522,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",522,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",522,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",522,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",522,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",522,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",522,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",522,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 6</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B523>
+           <option value=0&LSetup(3,"%s",523,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",523,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",523,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",523,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",523,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",523,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",523,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",523,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",523,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",523,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",523,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",523,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",523,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",523,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",523,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 7</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B524>
+           <option value=0&LSetup(3,"%s",524,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",524,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",524,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",524,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",524,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",524,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",524,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",524,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",524,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",524,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",524,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",524,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",524,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",524,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",524,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Input 8</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B525>
+           <option value=0&LSetup(3,"%s",525,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",525,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",525,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",525,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",525,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",525,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",525,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",525,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",525,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",525,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",525,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",525,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",525,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",525,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",525,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+      <tr>
+        <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Communication loss</b></font></td>
+        <td><font size="2" face="Arial, Helvetica, sans-serif">
+         <select size=1 name=B526>
+           <option value=0&LSetup(3,"%s",526,B,0," selected");>none</option>
+           <option value=1&LSetup(3,"%s",526,B,1," selected");>Relay 1</option>
+           <option value=2&LSetup(3,"%s",526,B,2," selected");>Relay 2</option>
+           <option value=3&LSetup(3,"%s",526,B,3," selected");>Relay 3</option>
+           <option value=4&LSetup(3,"%s",526,B,4," selected");>Relay 4</option>
+           <option value=101&LSetup(3,"%s",526,B,101," selected");>Output 1</option>
+           <option value=102&LSetup(3,"%s",526,B,102," selected");>Output 2</option>
+           <option value=103&LSetup(3,"%s",526,B,103," selected");>Output 3</option>
+           <option value=104&LSetup(3,"%s",526,B,104," selected");>Output 4</option>
+           <option value=10&LSetup(3,"%s",526,B,10," selected");>Ext. Relay 1</option>
+           <option value=11&LSetup(3,"%s",526,B,11," selected");>Ext. Relay 2</option>
+           <option value=12&LSetup(3,"%s",526,B,12," selected");>Ext. Relay 3</option>
+           <option value=13&LSetup(3,"%s",526,B,13," selected");>Ext. Relay 4</option>
+           <option value=14&LSetup(3,"%s",526,B,14," selected");>Ext. Relay 5</option>
+           <option value=15&LSetup(3,"%s",526,B,15," selected");>Ext. Relay 6</option>
+         </select>
+        </font></td>
+      </tr>
+        <tr>
+          <td>&nbsp;</td>
+         </tr>
+         <tr>
+        <td>
+          <input type="submit" value=" Save "><input type="reset" value=" Cancel ">
+       </td>
+      </tr>
+      </form>
+    </table>
+  </body>
+</html>

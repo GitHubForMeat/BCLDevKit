@@ -1,0 +1,187 @@
+<html>&L(0,"*",5);
+<head>
+<style type="text/css">
+<!--
+body.iframe,td.iframe{
+	margin-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+-->
+</style>
+</head>
+<body class=iframe>
+
+<table width="510px" class=iframe>
+	<tr>
+		<td width=250 class=iframe><b>NETWORK SETTINGS</b><br>
+			Use SonicIP<sup>&reg;</sup><br>
+			IP Address<br>
+			Netmask<br>
+			Gateway IP Address<br>
+			Primary DNS<br>
+			Alternative&nbsp;DNS<br>
+			Syslog Address<br>
+			DHCP Host Name<br>
+			Web Server Port<br>
+			SNMP System NAme<br>
+			SNMP System Location<br>
+			SNMP System Contact<br>
+		<td class=iframe>	<br>
+			&LSetup(3,"%s",198,b7,0,"Yes");	&LSetup(3,"%s",198,b7,1,"No");<br>
+			&LSetup(1,"%u",0); .&LSetup(1,"%u",1); .&LSetup(1,"%u",2); .&LSetup(1,"%u",3);<br>
+			&LSetup(2,"%u",8,0); .&LSetup(2,"%u",8,1); .&LSetup(2,"%u",8,2); .&LSetup(2,"%u",8,3);<br>
+			&LSetup(1,"%u",4); .&LSetup(1,"%u",5); .&LSetup(1,"%u",6); .&LSetup(1,"%u",7);<br>
+			&LSetup(1,"%u",64); .&LSetup(1,"%u",65); .&LSetup(1,"%u",66); .&LSetup(1,"%u",67);<br>
+			&LSetup(1,"%u",68); .&LSetup(1,"%u",69); .&LSetup(1,"%u",70); .&LSetup(1,"%u",71);<br>
+			&LSetup(1,"%u",200); .&LSetup(1,"%u",201); .&LSetup(1,"%u",202); .&LSetup(1,"%u",203);<br>
+			&LSetup(4,"%s",98);<br>
+			&LSetup(1,"%u",283,W);<br>
+			&LSetup(4,"%s",205);<br>
+			&LSetup(4,"%s",223);<br>
+			&LSetup(4,"%s",241);<br>
+	<tr>
+		<td class=iframe><b>AUDIO SETTINGS</b><br>
+			Input Source<br>
+			Encoding<br>
+			Volume<br>
+			Microphone Gain<br>
+			A/D Amplifier Gain<br>
+		<td class=iframe>	<br>
+			&LSetup(3,"%s",510,B,129,"Line");&LSetup(3,"%s",510,B,130,"Mic");<br>
+			&LSetup(3,"%s",511,B,6,"uLaw / 24 kHz (G.711)");
+			&LSetup(3,"%s",511,B,7,"uLaw / 8 kHz (G.711)");
+			&LSetup(3,"%s",511,B,9,"aLaw / 8 kHz (G.711)");
+			&LSetup(3,"%s",511,B,10,"PCM / 24 kHz (16bit)");
+			&LSetup(3,"%s",511,B,11,"PCM / 8 kHz (16bit)");<br>
+			
+			&LSetup(1,"%u",500,B); * 5 %<br>
+			
+			&LSetup(3,"%s",502,B,0,"21");
+			&LSetup(3,"%s",502,B,1,"22.5);
+			&LSetup(3,"%s",502,B,2,"24");
+			&LSetup(3,"%s",502,B,3,"25.5");	
+			&LSetup(3,"%s",502,B,4,"27");
+			&LSetup(3,"%s",502,B,5,"28.5");	
+			&LSetup(3,"%s",502,B,6,"30");
+			&LSetup(3,"%s",502,B,7,"31.5");
+			&LSetup(3,"%s",502,B,8,"33");
+			&LSetup(3,"%s",502,B,9,"34.5");
+			&LSetup(3,"%s",502,B,10,"36");
+			&LSetup(3,"%s",502,B,11,"37.5");
+			&LSetup(3,"%s",502,B,12,"39");
+			&LSetup(3,"%s",502,B,13,"40.5");
+			&LSetup(3,"%s",502,B,14,"42");
+			&LSetup(3,"%s",502,B,15,"43.5");<br>
+			&LSetup(3,"%s",501,B,0,"-3");
+			&LSetup(3,"%s",501,B,1,"-1.5");
+			&LSetup(3,"%s",501,B,2,"0);
+			&LSetup(3,"%s",501,B,3,"1.5");
+			&LSetup(3,"%s",501,B,4,"3");			
+			&LSetup(3,"%s",501,B,5,"4.5");
+			&LSetup(3,"%s",501,B,6,"6");
+			&LSetup(3,"%s",501,B,7,"7.5");
+			&LSetup(3,"%s",501,B,8,"9");
+			&LSetup(3,"%s",501,B,9,"10.5");
+			&LSetup(3,"%s",501,B,10,"12");
+			&LSetup(3,"%s",501,B,11,"13.5");
+			&LSetup(3,"%s",501,B,12,"15");
+			&LSetup(3,"%s",501,B,13,"16.5");
+			&LSetup(3,"%s",501,B,14,"18");
+			&LSetup(3,"%s",501,B,15,"19.5");<br>
+	<tr>
+		<td class=iframe><b>STREAMING SETTINGS</b><br>
+			RTP Mode<br>
+			Streaming Mode<br>
+			Input Trigger Level<br>
+			Inactivity Timeout<br>
+			Destination IP:Port<br>
+			Source IP<br>
+			Local Receive Port<br>
+		<td class=iframe>	<br>
+			&LSetup(3,"%s",529,b1,0,"On");
+			&LSetup(3,"%s",529,b1,1,"Off");<br>
+			&LSetup(3,"%s",520,B,0,"send always");
+          		&LSetup(3,"%s",520,B,3,"send on level");
+          		&LSetup(3,"%s",520,B,1,"send on I0/DI1");
+          		&LSetup(3,"%s",520,B,2,"respond");<br>
+			&LSetup(1,"%u",521,W);<br>
+			&LSetup(1,"%u",523,W); msec <br>
+			&LSetup(1,"%u",530);.&LSetup(1,"%u",531);.&LSetup(1,"%u",532);.&LSetup(1,"%u",533); : &LSetup(1,"%u",534,W);<br>
+			&LSetup(1,"%u",540);.&LSetup(1,"%u",541);.&LSetup(1,"%u",542);.&LSetup(1,"%u",543);<br>
+			&LSetup(1,"%u",536,W); <br>			
+	<tr>
+		<td class=iframe><b>SERIAL GATEWAY SETTINGS</b><br>
+			Communication Protocol<br>
+			Connection Type<br>
+			Destination IP<br>
+			Destination/Local Port<br>
+			Use Serial For<br> 
+			<br>
+			<b>Serial Port 1 Settings</b><br>
+			Baud Rate<br>
+			Data Bits<br>
+			Parity<br>
+			Stop Bits<br>
+			Flow Control<br>
+		<td class=iframe>	<br>
+			&LSetup(3,"%s",601,B,0,"None");
+			&LSetup(3,"%s",601,B,1,"UDP");
+			&LSetup(3,"%s",601,B,2,"TCP");<br>
+			&LSetup(3,"%s",602,B,0,"Active");
+			&LSetup(3,"%s",602,B,1,"Passive");<br>
+			&LSetup(1,"%u",604);.&LSetup(1,"%u",605);.&LSetup(1,"%u",606);.&LSetup(1,"%u",607);<br>
+			&LSetup(1,"%u",608,W);<br>
+			&LSetup(3,"%s",199,B,0,"BCL Application");
+			&LSetup(3,"%s",199,B,1,"VSC Panel");
+			&LSetup(3,"%s",199,B,2,"RTC Dongle");<br>
+			<br>
+			<br>
+		 	&LSetup(3,"%s",81,B,7,"300");
+		 	&LSetup(3,"%s",81,B,6,"600");
+		 	&LSetup(3,"%s",81,B,5,"1200");
+		 	&LSetup(3,"%s",81,B,4,"2400");
+		 	&LSetup(3,"%s",81,B,3,"4800");
+			&LSetup(3,"%s",81,B,2,"9600");
+			&LSetup(3,"%s",81,B,1,"19200");
+			&LSetup(3,"%s",81,B,0,"38400");
+			&LSetup(3,"%s",81,B,9,"57600");
+			&LSetup(3,"%s",81,B,11,"76800");
+			&LSetup(3,"%s",81,B,8,"115200");
+			&LSetup(3,"%s",81,B,10,"230400");<br>
+		 	&LSetup(3,"%s",80,b2-3,2,"7);&LSetup(3,"%s",80,b2-3,3,"8");<br>
+			&LSetup(3,"%s",80,b4-5,0,"No");
+			&LSetup(3,"%s",80,b4-5,3,"Even");
+			&LSetup(3,"%s",80,b4-5,1,"Odd");<br>
+			&LSetup(3,"%s",80,b6-7,1,"1");&LSetup(3,"%s",80,b6-7,3,"2");<br>
+			&LSetup(3,"%s",82,B,0,"None");
+			&LSetup(3,"%s",82,B,1,"Software (XON/XOFF");
+			&LSetup(3,"%s",82,B,2,"Hardware (RTS/CTS");
+			&LSetup(3,"%s",82,B,8,"RS485 Direction Control");<br>
+	<tr>
+		<td class=iframe><b>ADVANCED SETTINGS</b><br>
+			Send Keepalives<br>
+			Delay<br>
+			Frame Duration<br>
+			Relay Off Delay<br>
+		<td class=iframe>	<br>
+			&LSetup(3,"%s",529,b0,1,"On");
+			&LSetup(3,"%s",529,b0,0,"Off");<br>
+			&LSetup(1,"%u",525,W);<br>
+			&LSetup(1,"%u",527,W); ms<br>
+			&LSetup(1,"%u",610,W); ms<br>
+	<tr>
+		<td class=iframe><b>SECURITY SETTINGS</b><br>
+			Reset Function<br>
+			Factory Defaults<br>
+			Update Function<br>
+			Password<br>
+		<td class=iframe>	<br>
+			&LSetup(3,"%s",97,b0,0,"Enabled");&LSetup(3,"%s",97,b0,1,"Disabled");<br>
+			&LSetup(3,"%s",97,b1,0,"Enabled");&LSetup(3,"%s",97,b1,1,"Disabled");<br>
+			&LSetup(3,"%s",97,b2,0,"Enabled");&LSetup(3,"%s",97,b2,1,"Disabled");<br>
+			&LSetup(3,"%s",130,D,0,"Is not set);&LSetup(3,"%s",130,D,!0,"Is set");<br>
+</table>
+</body>
+</html>

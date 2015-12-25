@@ -1,0 +1,378 @@
+<html><!--&L(0,"*",21);-->
+<head>
+<link href="settings.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="visual.js"></script>
+<script type="text/javascript">
+
+function ModSel()
+{
+	var tsmod=get_val('tsmode_val');
+	var tcpGwType=get_val('contype_val');
+	
+	//serial gateway disabled
+	hide('contype');
+	hide('gwport');
+	hide('gwip');
+
+	if (tsmod==1) {
+		// UDP
+		set_txt('gw_port_name', 'Communication Port');
+		show('gwport');
+	}
+	if (tsmod==2){
+		//TCP
+		show('contype');
+		show('gwport');
+		if (tcpGwType==0){
+			// Active
+			show('gwip');
+			set_txt('gw_port_name','Destination Port');
+		}else{
+			//Passive
+			set_txt('gw_port_name','Local Port');
+		}
+	}
+}
+
+</script>
+</head>
+<body OnLoad=ModSel();>
+&LSetup(3,"%s",130,D,0,"
+<!--");
+<table cellspacing=5 width="510px">
+	<tr>
+		<td> <form action=setup.cgi method=POST style="float: right">
+		<input type=hidden name=L value=uilogout.html><input type=hidden name=D><input type=submit value=" Logout ">
+		</form>
+</table>
+&LSetup(3,"%s",130,D,0,"-->
+");
+	<form name="settings" action=setup.cgi method=POST>
+	<input type=hidden name=S480 value=uiadvanced>
+	<input type=hidden name=L value=rebooting.html target=_top>
+
+<table id="t1" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">NETWORK SETTINGS<br>
+	<tr>
+		<td>Use SonicIP<sup>&reg;</sup>
+		<td>
+			<input type=radio name=B198b7 value=0 &LSetup(3,"%s",198,b7,0,"checked");>Yes
+			<input type=radio name=B198b7 value=1 &LSetup(3,"%s",198,b7,1,"checked");>No
+	<tr>
+		<td>IP Address
+		<td>
+			<input name=B0 size=3 maxlength=3 value=&LSetup(1,"%u",0);> .
+			<input name=B1 size=3 maxlength=3 value=&LSetup(1,"%u",1);> .
+			<input name=B2 size=3 maxlength=3 value=&LSetup(1,"%u",2);> .
+			<input name=B3 size=3 maxlength=3 value=&LSetup(1,"%u",3);>
+	<tr>
+		<td>Netmask
+		<td>
+			<input name=N8B0 size=3 maxlength=3 value=&LSetup(2,"%u",8,0);> .
+			<input name=N8B1 size=3 maxlength=3 value=&LSetup(2,"%u",8,1);> .
+			<input name=N8B2 size=3 maxlength=3 value=&LSetup(2,"%u",8,2);> .
+			<input name=N8B3 size=3 maxlength=3 value=&LSetup(2,"%u",8,3);>
+	<tr>
+		<td>Gateway IP Address
+		<td>
+			<input name=B4 size=3 maxlength=3 value=&LSetup(1,"%u",4);> .
+			<input name=B5 size=3 maxlength=3 value=&LSetup(1,"%u",5);> .
+			<input name=B6 size=3 maxlength=3 value=&LSetup(1,"%u",6);> .
+			<input name=B7 size=3 maxlength=3 value=&LSetup(1,"%u",7);>
+	<tr>
+		<td>Primary DNS
+		<td>
+			<input name=B64 size=3 maxlength=3 value=&LSetup(1,"%u",64);> .
+			<input name=B65 size=3 maxlength=3 value=&LSetup(1,"%u",65);> .
+			<input name=B66 size=3 maxlength=3 value=&LSetup(1,"%u",66);> .
+			<input name=B67 size=3 maxlength=3 value=&LSetup(1,"%u",67);>
+	<tr>
+		<td>Alternative&nbsp;DNS
+		<td>
+			<input name=B68 size=3 maxlength=3 value=&LSetup(1,"%u",68);> .
+			<input name=B69 size=3 maxlength=3 value=&LSetup(1,"%u",69);> .
+			<input name=B70 size=3 maxlength=3 value=&LSetup(1,"%u",70);> .
+			<input name=B71 size=3 maxlength=3 value=&LSetup(1,"%u",71);>
+	<tr>
+		<td>Syslog Address
+		<td>
+			<input name=B200 size=3 maxlength=3 value=&LSetup(1,"%u",200);> . 
+			<input name=B201 size=3 maxlength=3 value=&LSetup(1,"%u",201);> . 
+			<input name=B202 size=3 maxlength=3 value=&LSetup(1,"%u",202);> . 
+			<input name=B203 size=3 maxlength=3 value=&LSetup(1,"%u",203);>
+	<tr>
+		<td>DHCP Host Name
+		<td><input name=S98 size=15 maxlength=15 value="&LSetup(4,"%s",98);">
+	<tr>
+		<td>Web Server Port
+		<td><input name=W196 size=5 maxlength=5 value=&LSetup(1,"%u",196,W);>
+		
+	<!--&LState(2,"%s",28,25,"-->");&LState(2,"%s",28,17,"-->");
+	<tr>
+		<td>Default Ethernet Port
+		<td>
+			<select size=1 name=B96>
+				<option value="0" &LSetup(3,"%s",96,B,0,"selected");>ETH1</option>
+				<option value="1" &LSetup(3,"%s",96,B,1,"selected");>ETH2</option>
+			</select>
+	<!-- -->
+    	<tr>
+        	<td>SNMP System Name
+       		<td><input name=S205 size=16 maxlength=16 value="&LSetup(4,"%s",205);">
+	<tr>
+        	<td>SNMP System Location
+        	<td><input name=S223 size=16 maxlength=16 value="&LSetup(4,"%s",223);">
+    	<tr>
+        	<td>SNMP System Contact
+        	<td><input name=S241 size=16 maxlength=16 value="&LSetup(4,"%s",241);">
+</table>
+
+
+<table id="t2" style="display:none" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">AUDIO SETTINGS<br>
+	<tr>
+		<td>Input Source
+		<td>	<input type=radio name=B510 value=129 &LSetup(3,"%s",510,B,129,"checked");> Line
+			<input type=radio name=B510 value=130 &LSetup(3,"%s",510,B,130,"checked");> Mic
+	<tr>
+		<td>Encoding
+		<td>	<select size=1 name=B511>
+				<option value=6 &LSetup(3,"%s",511,B,6,"selected");>uLaw / 24 kHz (G.711)</option>
+				<option value=7 &LSetup(3,"%s",511,B,7,"selected");>uLaw / 8 kHz (G.711)</option> 
+				<option value=8 &LSetup(3,"%s",511,B,8,"selected");>aLaw / 24 kHz (G.711)</option>
+				<option value=9 &LSetup(3,"%s",511,B,9,"selected");>aLaw / 8 kHz (G.711)</option>
+				<option value=10 &LSetup(3,"%s",511,B,10,"selected");>PCM / 24 kHz (16bit)</option>
+				<option value=11 &LSetup(3,"%s",511,B,11,"selected");>PCM / 8 kHz (16bit)</option>
+			</select>
+	<tr>
+		<td>Volume
+		<td>	<select size=1 name=B500>
+				<option value=0 &LSetup(3,"%s",500,B,0,"selected");>0</option>
+				<option value=1 &LSetup(3,"%s",500,B,1,"selected");>5</option>
+				<option value=2 &LSetup(3,"%s",500,B,2,"selected");>10</option>
+				<option value=3 &LSetup(3,"%s",500,B,3,"selected");>15</option>
+				<option value=4 &LSetup(3,"%s",500,B,4,"selected");>20</option>
+				<option value=5 &LSetup(3,"%s",500,B,5,"selected");>25</option>
+				<option value=6 &LSetup(3,"%s",500,B,6,"selected");>30</option>
+				<option value=7 &LSetup(3,"%s",500,B,7,"selected");>35</option>
+				<option value=8 &LSetup(3,"%s",500,B,8,"selected");>40</option>
+				<option value=9 &LSetup(3,"%s",500,B,9,"selected");>45</option>
+				<option value=10 &LSetup(3,"%s",500,B,10,"selected");>50</option>
+				<option value=11 &LSetup(3,"%s",500,B,11,"selected");>55</option>
+				<option value=12 &LSetup(3,"%s",500,B,12,"selected");>60</option>
+				<option value=13 &LSetup(3,"%s",500,B,13,"selected");>65</option>
+				<option value=14 &LSetup(3,"%s",500,B,14,"selected");>70</option>
+				<option value=15 &LSetup(3,"%s",500,B,15,"selected");>75</option>
+				<option value=16 &LSetup(3,"%s",500,B,16,"selected");>80</option>
+				<option value=17 &LSetup(3,"%s",500,B,17,"selected");>85</option>
+				<option value=18 &LSetup(3,"%s",500,B,18,"selected");>90</option>
+				<option value=19 &LSetup(3,"%s",500,B,19,"selected");>95</option>
+				<option value=20 &LSetup(3,"%s",500,B,20,"selected");>100</option>
+			</select> %
+	<tr>	
+		<td>Microphone Gain
+		<td>	<select size=1 name=B502>
+				<option value=0 &LSetup(3,"%s",502,B,0,"selected");>21</option>
+				<option value=1 &LSetup(3,"%s",502,B,1,"selected");>22.5</option>
+				<option value=2 &LSetup(3,"%s",502,B,2,"selected");>24</option>
+				<option value=3 &LSetup(3,"%s",502,B,3,"selected");>25.5</option>
+				<option value=4 &LSetup(3,"%s",502,B,4,"selected");>27</option>
+				<option value=5 &LSetup(3,"%s",502,B,5,"selected");>28.5</option>
+				<option value=6 &LSetup(3,"%s",502,B,6,"selected");>30</option>
+				<option value=7 &LSetup(3,"%s",502,B,7,"selected");>31.5</option>
+				<option value=8 &LSetup(3,"%s",502,B,8,"selected");>33</option>
+				<option value=9 &LSetup(3,"%s",502,B,9,"selected");>34.5</option>
+				<option value=10 &LSetup(3,"%s",502,B,10,"selected");>36</option>
+				<option value=11 &LSetup(3,"%s",502,B,11,"selected");>37.5</option>
+				<option value=12 &LSetup(3,"%s",502,B,12,"selected");>39</option>
+				<option value=13 &LSetup(3,"%s",502,B,13,"selected");>40.5</option>
+				<option value=14 &LSetup(3,"%s",502,B,14,"selected");>42</option>
+				<option value=15 &LSetup(3,"%s",502,B,15,"selected");>43.5</option>
+			</select> dB
+	<tr>	
+		<td>A/D Amplifier Gain
+		<td>	<select size=1 name=B501>
+				<option value=0 &LSetup(3,"%s",501,B,0,"selected");>-3</option>
+				<option value=1 &LSetup(3,"%s",501,B,1,"selected");>-1.5</option>
+				<option value=2 &LSetup(3,"%s",501,B,2,"selected");>0</option>
+				<option value=3 &LSetup(3,"%s",501,B,3,"selected");>1.5</option>
+				<option value=4 &LSetup(3,"%s",501,B,4,"selected");>3</option>
+				<option value=5 &LSetup(3,"%s",501,B,5,"selected");>4.5</option>
+				<option value=6 &LSetup(3,"%s",501,B,6,"selected");>6</option>
+				<option value=7 &LSetup(3,"%s",501,B,7,"selected");>7.5</option>
+				<option value=8 &LSetup(3,"%s",501,B,8,"selected");>9</option>
+				<option value=9 &LSetup(3,"%s",501,B,9,"selected");>10.5</option>
+				<option value=10 &LSetup(3,"%s",501,B,10,"selected");>12</option>
+				<option value=11 &LSetup(3,"%s",501,B,11,"selected");>13.5</option>
+				<option value=12 &LSetup(3,"%s",501,B,12,"selected");>15</option>
+				<option value=13 &LSetup(3,"%s",501,B,13,"selected");>16.5</option>
+				<option value=14 &LSetup(3,"%s",501,B,14,"selected");>18</option>
+				<option value=15 &LSetup(3,"%s",501,B,15,"selected");>19.5</option>
+			</select> dB 
+</table>
+
+<table id="t3" style="display:none" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">STREAMING SETTINGS<br>
+	<tr>
+		<td>RTP Mode
+		<td>	<select size=1 name=B529b1>
+				<option value=1 &LSetup(3,"%s",529,b1,1,"selected");>on</option>
+				<option value=0 &LSetup(3,"%s",529,b1,0,"selected");>off</option>
+			</select>		
+	<tr>
+		<td>Streaming Mode
+		<td>	<select size=1 name=B520>
+          			<option value=0 &LSetup(3,"%s",520,B,0,"selected");>send always</option>
+          			<option value=3 &LSetup(3,"%s",520,B,3,"selected");>send on level</option>
+          			<option value=1 &LSetup(3,"%s",520,B,1,"selected");>send on I0/DI1</option>
+          			<option value=2 &LSetup(3,"%s",520,B,2,"selected");>respond</option>
+       		</select>
+	<tr>	
+		<td>Input Trigger Level
+		<td>	<input name=W521 size=5 maxlength=5 value=&LSetup(1,"%u",521,W); onChange=PortCheck(this)>
+	<tr>
+		<td>Inactivity Timeout
+		<td>	<input name=W523 size=5 maxlength=5 value=&LSetup(1,"%u",523,W); onChange=PortCheck(this)> msec
+	<tr>
+		<td>Destination IP:Port
+		<td>	<input name=B530 size=3 maxlength=3 value=&LSetup(1,"%u",530); onChange=IPCheck(this)> . <input name=B531 size=3 maxlength=3 value=&LSetup(1,"%u",531); onChange=IPCheck(this)> . <input name=B532 size=3 maxlength=3 value=&LSetup(1,"%u",532); onChange=IPCheck(this)> . <input name=B533 size=3 maxlength=3 value=&LSetup(1,"%u",533); onChange=IPCheck(this)>:
+			<input name=W534 size=5 maxlength=5 value=&LSetup(1,"%u",534,W); onChange=PortCheck(this)>
+	<tr>
+		<td>Source IP</td>
+		<td><input name=B540 size=3 maxlength=3 value=&LSetup(1,"%u",540); onChange=IPCheck(this)> . <input name=B541 size=3 maxlength=3 value=&LSetup(1,"%u",541); onChange=IPCheck(this)> . <input name=B542 size=3 maxlength=3 value=&LSetup(1,"%u",542); onChange=IPCheck(this)> . <input name=B543 size=3 maxlength=3 value=&LSetup(1,"%u",543); onChange=IPCheck(this)>
+	<tr>
+		<td>Local Receive Port
+		<td><input name=W536 size=5 maxlength=5 value=&LSetup(1,"%u",536,W); onChange=PortCheck(this)>
+</table>
+
+
+
+<table id="t4" style="display:none" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">SERIAL GATEWAY<br>
+		
+	<tr>
+		<td>Communication Protocol
+		<td>	<select size=1 name=B601 id="tsmode_val" OnChange="ModSel()">
+				<option value=0 &LSetup(3,"%s",601,B,0,"selected");>None</option>
+				<option value=1 &LSetup(3,"%s",601,B,1,"selected");>UDP</option>
+				<option value=2 &LSetup(3,"%s",601,B,2,"selected");>TCP</option>
+        		</select>
+    <tr id="contype">
+		<td>Connection Type
+		<td>	<select size=1 name=B602 id="contype_val" OnChange="ModSel()">
+				<option value=0 &LSetup(3,"%s",602,B,0,"selected");>Active</option>
+				<option value=1 &LSetup(3,"%s",602,B,1,"selected");>Passive</option>
+			</select>
+	<tr id="gwip">
+		<td>Destination IP
+		<td>	<input name=B604 size=3 maxlength=3 value=&LSetup(1,"%u",604); onChange=IPCheck(this)> . 
+			<input name=B605 size=3 maxlength=3 value=&LSetup(1,"%u",605); onChange=IPCheck(this)> . 
+			<input name=B606 size=3 maxlength=3 value=&LSetup(1,"%u",606); onChange=IPCheck(this)> . 
+			<input name=B607 size=3 maxlength=3 value=&LSetup(1,"%u",607); onChange=IPCheck(this)>
+	<tr id="gwport">
+		<td id="gw_port_name"> <!--The name is dynamically changed-->
+		<td>	<input id="port" name=W608 size=5 maxlength=5 value=&LSetup(1,"%u",608,W); onChange=PortCheck(this);>
+	<tr>
+		<td colspan="2"><br>Serial Port 1 Settings<br>
+	<tr>
+		<td>Use Serial For
+		<td><select size=1 name=B199 onChange="serial_check();">
+			<option value=0 &LSetup(3,"%s",199,B,0,"selected");>BCL Application</option>
+			<option value=1 &LSetup(3,"%s",199,B,1,"selected");>VSC Panel</option>
+			<option value=2 &LSetup(3,"%s",199,B,2,"selected");>RTC Dongle</option>
+		</select>
+
+	<tr>
+		<td>Baud Rate
+		<td> <select size=1 name=B81>
+			<option value=7 &LSetup(3,"%s",81,B,7,"selected");>300</option>
+			<option value=6 &LSetup(3,"%s",81,B,6,"selected");>600</option>
+			<option value=5 &LSetup(3,"%s",81,B,5,"selected");>1200</option>
+			<option value=4 &LSetup(3,"%s",81,B,4,"selected");>2400</option>
+			<option value=3 &LSetup(3,"%s",81,B,3,"selected");>4800</option>
+			<option value=2 &LSetup(3,"%s",81,B,2,"selected");>9600</option>
+			<option value=1 &LSetup(3,"%s",81,B,1,"selected");>19200</option>
+			<option value=0 &LSetup(3,"%s",81,B,0,"selected");>38400</option>
+			<option value=9 &LSetup(3,"%s",81,B,9,"selected");>57600</option>
+			<option value=11 &LSetup(3,"%s",81,B,11,"selected");>76800</option>
+			<option value=8 &LSetup(3,"%s",81,B,8,"selected");>115200</option>
+			<option value=12 &LSetup(3,"%s",81,B,12,"selected");>230400</option>
+		</select>
+	<tr>
+		<td>Data Bits
+		<td> <select size=1 name=B80b2-3>
+			<option value=2 &LSetup(3,"%s",80,b2-3,2,"selected");>7</option>
+			<option value=3 &LSetup(3,"%s",80,b2-3,3,"selected");>8</option>
+		</select>
+	<tr>
+		<td>Parity
+		<td> <select size=1 name=B80b4-5>
+			<option value=0 &LSetup(3,"%s",80,b4-5,0,"selected");>no</option>
+			<option value=3 &LSetup(3,"%s",80,b4-5,3,"selected");>even</option>
+			<option value=1 &LSetup(3,"%s",80,b4-5,1,"selected");>odd</option>
+		</select>
+	<tr>
+		<td>Stop Bits
+		<td> <select size=1 name=B80b6-7>
+			<option value=1 &LSetup(3,"%s",80,b6-7,1,"selected");>1</option>
+			<option value=3 &LSetup(3,"%s",80,b6-7,3,"selected");>2</option>
+		</select>
+	<tr>
+		<td>Flow Control
+		<td> <select size=1 name=B82>
+			<option value=0 &LSetup(3,"%s",82,B,0,"selected");>none</option>
+			<option value=1 &LSetup(3,"%s",82,B,1,"selected");>Software (XON/XOFF)</option>
+			<option value=2 &LSetup(3,"%s",82,B,2,"selected");>Hardware (RTS/CTS)</option>
+			<option value=8 &LSetup(3,"%s",82,B,8,"selected");>RS485 Direction Control</option>
+		</select>
+</table>
+
+
+<table id="t5" style="display:none" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">ADVANCED SETTINGS<br>
+	<tr>
+		<td>Send Keepalives
+		<td>	<select size=1 name=B529b0>
+				<option value=1 &LSetup(3,"%s",529,b0,1,"selected");>on</option>
+				<option value=0 &LSetup(3,"%s",529,b0,0,"selected");>off</option>
+			</select>		
+	<tr>
+		<td>Delay
+		<td>	<input name=W525 size=5 maxlength=5 value=&LSetup(1,"%u",525,W); onChange=PortCheck(this)> ms
+	<tr>
+		<td>Frame duration
+		<td><input name=W527 size=4 maxlength=4 value=&LSetup(1,"%u",527,W);><font size=2> ms
+	<tr>
+		<td>Relay Off Delay</td>
+		<td><input name=W610 size=4 maxlength=4 value=&LSetup(1,"%u",610,W);><font size=2> ms
+</table>
+
+
+<table id="t6" style="display:none" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">SECURITY SETTINGS <br>
+	<tr>
+		<td>Reset Function
+		<td><input type=radio name=B97b0 value=0 &LSetup(3,"%s",97,b0,0,"checked");> Enabled <input type=radio name=B97b0 value=1 &LSetup(3,"%s",97,b0,1,"checked");> Disabled
+	<tr>
+		<td>Factory Defaults
+		<td><input type=radio name=B97b1 value=0 &LSetup(3,"%s",97,b1,0,"checked");> Enabled <input type=radio name=B97b1 value=1 &LSetup(3,"%s",97,b1,1,"checked");> Disabled
+	<tr>
+		<td>Update Function
+		<td><input type=radio name=B97b2 value=0 &LSetup(3,"%s",97,b2,0,"checked");> Enabled <input type=radio name=B97b2 value=1 &LSetup(3,"%s",97,b2,1,"checked");> Disabled
+	<tr>
+&LSetup(3,"%s",130,D,0,"		<td>Set Password<td><input name=P1 size=18 maxlength=25 type=password value=> ");
+&LSetup(3,"%s",130,D,!0,"		<td>Old Password<td><input name=P1 size=18 maxlength=25 type=password value=>
+	<tr>
+		<td>New Password<td><input name=P1.1 size=18 maxlength=25 type=password value=> ");
+</table>
+
+</form>
+</body>
+</html>

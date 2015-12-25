@@ -1,0 +1,35 @@
+<html>&L(0,"*",5);
+<head>
+<link href="menu.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="visual.js"></script>
+</head>
+<body onload=" mk_bold(document.links[1]);">
+
+<p style="color:red">
+Streaming Mode:<br>
+&LSetup(3,"%s",520,B,0,"Send Always");
+&LSetup(3,"%s",520,B,1,"Send on I0/DI1");
+&LSetup(3,"%s",520,B,2,"Respond");
+&LSetup(3,"%s",520,B,3,"Send On Level");
+</p>
+
+
+<table border="0" cellspacing="1" cellpadding="3" width="175px">
+<tr><td class="menu"><a class="main" href="uifbasic.html" target="view_frame">Basic Settings</a>
+<tr><td class="menu"><b>Advanced Settings</b>
+<tr><td class="menu"><a href="javascript:show_cfg(1);" onclick="mk_bold(this);" target="_self">Network</a>
+<tr><td class="menu"><a href="javascript:show_cfg(2);" onclick="mk_bold(this);" target="_self">Audio</a>
+<tr><td class="menu"><a href="javascript:show_cfg(3);" onclick="mk_bold(this);" target="_self">Streaming</a>
+<tr><td class="menu"><a href="javascript:show_cfg(4);" onclick="mk_bold(this);" target="_self">Serial GW</a>
+<tr><td class="menu"><a href="javascript:show_cfg(5);" onclick="mk_bold(this);" target="_self">Advanced</a>
+<tr><td class="menu"><a href="javascript:show_cfg(6);" onclick="mk_bold(this);" target="_self">Security</a>
+</table>
+
+<table border="0" cellspacing="0" cellpadding="0">
+<tr><td>&nbsp;
+<tr>
+	<td><input type="button" value="Apply" onclick="parent.frames['cfg'].document.forms['settings'].submit();mk_bold(document.links[1]);">
+	<td><input type="button" value="Cancel" onclick="parent.frames['cfg'].document.forms['settings'].reset()">
+</table>
+</body>
+</html>

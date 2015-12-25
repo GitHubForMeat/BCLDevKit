@@ -1,0 +1,87 @@
+<html><!--&L(0,"*",21);-->
+<head>
+<!--
+<meta http-equiv=refresh content="5; url=sip_uihome.html">
+-->
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #333333;
+}
+
+th.val,td.val {
+	background-color: #e6e8eb;
+	font-weight: normal;
+}
+
+th.wh,td.wh {
+	background-color: #ffffff;
+}
+-->
+</style>
+
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="update.js"></script>
+<script type="text/javascript" src="vumeter.js"></script>
+<link href="vumeter.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+var vuInL=new VuMeter("vuInL",16,"",0,0);
+var vuOutL=new VuMeter("vuOutL",16,"",0,0);
+var vuV=new VuMeter("vuV",0,"dimgray",0,100);
+var vuB=new VuMeter("vuB",0,"dimgray",0,65532);
+
+startUpdate(750);
+
+</script>
+
+
+
+</head>
+<body>
+<table cellspacing="0" cellpadding="3" width="510px">
+	<tr>
+		<td class="wh" width="200px"> APPLICATION STATUS
+	<tr>
+		<td> Streaming Mode
+		<td>
+		<td colspan=15 class="val"> &LSetup(3,"%s",520,B,0,"Send Always");
+			&LSetup(3,"%s",520,B,1,"Send on I0/DI1");
+			&LSetup(3,"%s",520,B,2,"Respond");
+			&LSetup(3,"%s",520,B,3,"Send On Level");
+	<tr>
+		<td> Remote Party
+		<td>
+		<td colspan=15 class="val" id=rmthost >
+	<tr>
+		<td class="wh" colspan="16"><hr size="1" noshade>
+<!--
+</table>
+
+<table cellspacing="0" cellpadding="3" width="510px">
+-->
+	<tr>
+		<td class="wh" width="200px" colspan="16">AUDIO STATUS
+      <tr>
+		<th align="left"> Current Volume
+		<th align="right" id=volID>
+		<th align="left">
+		<table class="vu_meter" id="vuV"><tr><td><td></table>
+	<tr>
+		<th align="left">Input Peak Level
+		<th align="right" id=peaklinID>
+		<th align="left">
+		<table class="vu_meter" id="vuInL"><tr><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td></table>
+	<tr>
+		<th align="left">Output Peak Level
+		<th align="right" id=peakloutID>
+		<th align="left">
+		<table class="vu_meter" id="vuOutL"><tr><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td><td></table>
+	<tr>
+		<td class="wh" colspan="16"><hr size="1" noshade>
+</table>
+
+</body>
+</html>

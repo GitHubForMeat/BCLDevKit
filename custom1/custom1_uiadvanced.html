@@ -1,0 +1,100 @@
+<html><!--&L(0,"*",21);-->
+<head>
+<link href="settings.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="visual.js"></script>
+</script>
+</head>
+<body OnLoad="show_cfg(1);">
+	<form name="settings" action=setup.cgi method=POST>
+	<input type=hidden name=S480 value=uiadvanced>
+	<input type=hidden name=L value=rebooting.html target=_top>
+
+
+<table id="t1" style="display:none" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">ADVANCED SETTINGS 1<br>
+	<tr>
+		<td width=200>Option 1
+		<td>Input Option 1
+	<tr>
+		<td>Option 2
+		<td>Input Option 2
+</table>
+
+<table id="t2" style="display:none" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2" valign="top">ADVANCED SETTINGS 2
+
+	<tr>
+		<td width=200>Option 3
+		<td>Input Option 3
+	<tr>
+		<td>Option 4
+		<td>Input Option 4
+</table>
+
+<table id="t3" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">NETWORK SETTINGS<br>
+	<tr>
+		<td width=200>Use SonicIP<sup>&reg;</sup>
+		<td>
+			<input type=radio name=B198b7 value=0 &LSetup(3,"%s",198,b7,0,"checked");>Yes
+			<input type=radio name=B198b7 value=1 &LSetup(3,"%s",198,b7,1,"checked");>No
+	<tr>
+		<td>IP Address
+		<td>
+			<input name=B0 size=3 maxlength=3 value=&LSetup(1,"%u",0);> .
+			<input name=B1 size=3 maxlength=3 value=&LSetup(1,"%u",1);> .
+			<input name=B2 size=3 maxlength=3 value=&LSetup(1,"%u",2);> .
+			<input name=B3 size=3 maxlength=3 value=&LSetup(1,"%u",3);>
+	<tr>
+		<td>Netmask
+		<td>
+			<input name=N8B0 size=3 maxlength=3 value=&LSetup(2,"%u",8,0);> .
+			<input name=N8B1 size=3 maxlength=3 value=&LSetup(2,"%u",8,1);> .
+			<input name=N8B2 size=3 maxlength=3 value=&LSetup(2,"%u",8,2);> .
+			<input name=N8B3 size=3 maxlength=3 value=&LSetup(2,"%u",8,3);>
+	<tr>
+		<td>Gateway IP Address
+		<td>
+			<input name=B4 size=3 maxlength=3 value=&LSetup(1,"%u",4);> .
+			<input name=B5 size=3 maxlength=3 value=&LSetup(1,"%u",5);> .
+			<input name=B6 size=3 maxlength=3 value=&LSetup(1,"%u",6);> .
+			<input name=B7 size=3 maxlength=3 value=&LSetup(1,"%u",7);>
+	<tr>
+		<td>Primary DNS
+		<td>
+			<input name=B64 size=3 maxlength=3 value=&LSetup(1,"%u",64);> .
+			<input name=B65 size=3 maxlength=3 value=&LSetup(1,"%u",65);> .
+			<input name=B66 size=3 maxlength=3 value=&LSetup(1,"%u",66);> .
+			<input name=B67 size=3 maxlength=3 value=&LSetup(1,"%u",67);>
+	<tr>
+		<td>Alternative&nbsp;DNS
+		<td>
+			<input name=B68 size=3 maxlength=3 value=&LSetup(1,"%u",68);> .
+			<input name=B69 size=3 maxlength=3 value=&LSetup(1,"%u",69);> .
+			<input name=B70 size=3 maxlength=3 value=&LSetup(1,"%u",70);> .
+			<input name=B71 size=3 maxlength=3 value=&LSetup(1,"%u",71);>
+	<tr>
+		<td>DHCP Host Name
+		<td><input name=S98 size=15 maxlength=15 value="&LSetup(4,"%s",98);">
+	<tr>
+		<td>Web Server Port
+		<td><input name=W283 size=5 maxlength=5 value=&LSetup(1,"%u",283,W);>
+    	<tr>
+        	<td>SNMP System Name
+       		<td><input name=S205 size=16 maxlength=16 value="&LSetup(4,"%s",205);">
+	<tr>
+        	<td>SNMP System Location
+        	<td><input name=S223 size=16 maxlength=16 value="&LSetup(4,"%s",223);">
+    	<tr>
+        	<td>SNMP System Contact
+        	<td><input name=S241 size=16 maxlength=16 value="&LSetup(4,"%s",241);">
+</table>
+
+
+</form>
+</body>
+</html>

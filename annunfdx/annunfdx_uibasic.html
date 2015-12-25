@@ -1,0 +1,41 @@
+<html><!--&L(0,"*",21);-->
+<head>
+<link href="settings.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="util.js"></script>
+
+</head>
+<body>
+
+<!--
+<table cellspacing=5 width=510px align="center">
+-->
+&LSetup(3,"%s",130,D,0,"
+	<!--");
+	<tr>
+		<td> <form action=setup.cgi method=POST style="float: right">
+		<input type=hidden name=L value=uilogout.html><input type=hidden name=D><input type=submit value=" Logout ">
+		</form>
+&LSetup(3,"%s",130,D,0,"
+-->");
+ 
+	<form name="settings" action=setup.cgi method=POST>
+	<input type=hidden name=S480 value=uibasic>
+	<input type=hidden name=L value=rebooting.html target=_top>
+
+<table id="t1" cellspacing=5 width="510px">
+	<tr>
+		<td colspan="2">BASIC SETTINGS<br>
+	<tr>
+		<td>Destination IP:Port
+		<td><input name=B530 size=3 maxlength=3 value=&LSetup(1,"%u",530); onChange=IPCheck(this)> . <input name=B531 size=3 maxlength=3 value=&LSetup(1,"%u",531); onChange=IPCheck(this)> . <input name=B532 size=3 maxlength=3 value=&LSetup(1,"%u",532); onChange=IPCheck(this)> . <input name=B533 size=3 maxlength=3 value=&LSetup(1,"%u",533); onChange=IPCheck(this)> : 
+		    <input name=W534 size=5 maxlength=5 value=&LSetup(1,"%u",534,W); onChange=PortCheck(this)>
+	<tr>
+		<td>Source IP
+		<td><input name=B540 size=3 maxlength=3 value=&LSetup(1,"%u",540); onChange=IPCheck(this)> . <input name=B541 size=3 maxlength=3 value=&LSetup(1,"%u",541); onChange=IPCheck(this)> . <input name=B542 size=3 maxlength=3 value=&LSetup(1,"%u",542); onChange=IPCheck(this)> . <input name=B543 size=3 maxlength=3 value=&LSetup(1,"%u",543); onChange=IPCheck(this)>
+	<tr>
+		<td>Local Listen Port
+		<td><input name=W536 size=5 maxlength=5 value=&LSetup(1,"%u",536,W); onChange=PortCheck(this)>
+</table>
+</form>
+</body>
+</html>

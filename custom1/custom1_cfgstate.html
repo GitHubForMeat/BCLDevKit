@@ -1,0 +1,42 @@
+<html>&L(0,"*",5);
+<head>
+<style type="text/css">
+<!--
+body.iframe,td.iframe{
+	margin-left: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #000000;
+}
+-->
+</style>
+</head>
+<body class=iframe>
+
+<p>This file gives an example template to add CUSTOM1 application configuration status to the main status.<br>
+Modify the table entries to show the parameters you need. Use &amp;LSetup dynamic marks to fetch the setup values from the EEPROM. For more information please refer to the latest ABCL documentation and BCL User Manual.<br></p>
+
+<table width="510px" class=iframe>
+	<tr>
+		<td width=250 class=iframe><b>NETWORK SETTINGS</b><br>
+			Use SonicIP<sup>&reg;</sup><br>
+			IP Address<br>
+			Netmask<br>
+			Gateway IP Address<br>
+			Primary DNS<br>
+			Alternative&nbsp;DNS<br>
+			DHCP Host Name<br>
+			Web Server Port<br>
+		<td class=iframe>	<br>
+			&LSetup(3,"%s",277,b7,0,"Yes");	&LSetup(3,"%s",277,b7,1,"No");<br>
+			&LSetup(1,"%u",0); .&LSetup(1,"%u",1); .&LSetup(1,"%u",2); .&LSetup(1,"%u",3);<br>
+			&LSetup(2,"%u",8,0); .&LSetup(2,"%u",8,1); .&LSetup(2,"%u",8,2); .&LSetup(2,"%u",8,3);<br>
+			&LSetup(1,"%u",4); .&LSetup(1,"%u",5); .&LSetup(1,"%u",6); .&LSetup(1,"%u",7);<br>
+			&LSetup(1,"%u",64); .&LSetup(1,"%u",65); .&LSetup(1,"%u",66); .&LSetup(1,"%u",67);<br>
+			&LSetup(1,"%u",68); .&LSetup(1,"%u",69); .&LSetup(1,"%u",70); .&LSetup(1,"%u",71);<br>
+			&LSetup(4,"%s",98);<br>
+			&LSetup(1,"%u",283,W);<br>
+
+</table>
+</body>
+</html>
