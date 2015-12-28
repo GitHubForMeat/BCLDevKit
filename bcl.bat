@@ -15,7 +15,7 @@ if errorlevel 1 goto quit
 if "%IS_BCL%"=="1" del %1.bas
 cd ..
 C:\barix\tools\web2cob /o %1.cob /d %1
-if !%2==! goto endit
+
 tftp -i 192.168.1.24 put %1.cob WEB4
 goto endit
 :quit
